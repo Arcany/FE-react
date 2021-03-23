@@ -7,6 +7,13 @@ export const ProductForm = (props) => {
   const [product, setProduct] = useState(initialProductState);
   const { image, name, price } = product;
   const handleInputChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      let img = e.target.files[0];
+      setProduct({
+        ...product,
+        [e.target.name]: URL.createObjectURL(img),
+      });
+    }
     setProduct({ ...product, [e.target.name]: e.target.value });
   };
   const handleFinalSubmit = (e) => {
