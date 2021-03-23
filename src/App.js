@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {React,useState} from "react";
+import { ProductForm } from "./components/ProductForm";
 
 function App() {
+  const [productList, setProductList] = useState([]);
+  const updateProductList = (eachProduct) => {
+    setProductList([...productList, eachProduct]);
+  };
+  console.log(productList);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <ProductForm updateProductList={updateProductList}/>
+      </div>
+    </>
   );
 }
 
