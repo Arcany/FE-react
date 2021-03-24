@@ -11,7 +11,7 @@ export const ProductForm = (props) => {
       let img = e.target.files[0];
       setProduct({
         ...product,
-        [e.target.name]: URL.createObjectURL(img),
+        [e.target.name]: img,
       });
     }
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -24,7 +24,6 @@ export const ProductForm = (props) => {
       <Form.Group>
         <Form.File
           name="image"
-          id="productImage"
           label="Product image: "
           onChange={handleInputChange}
           value={image}

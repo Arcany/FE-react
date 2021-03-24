@@ -10,9 +10,13 @@ function App() {
   const updateProductList = (eachProduct) => {
     setProductList([...productList, eachProduct]);
   };
+  const removeProduct = (name) => {
+    setProductList(productList.filter((item) => item.name !== name)); //unique id of an item would be better here
+  };
   const updateCart = (eachProduct) => {
     setCart([...cart, eachProduct]);
   };
+  console.log(productList);
   return (
     <>
       <div className="App">
@@ -33,7 +37,11 @@ function App() {
             </Col>
           </Row>
           <Row>
-            <ProductGrid productList={productList} updateCart={updateCart} />
+            <ProductGrid
+              productList={productList}
+              updateCart={updateCart}
+              removeProduct={removeProduct}
+            />
           </Row>
         </Container>
       </div>
