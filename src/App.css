@@ -1,7 +1,13 @@
 .App {
-  text-align: center;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
 }
-
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +32,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+h3 {
+  align-self: flex-end;
 }
 
 @keyframes App-logo-spin {
